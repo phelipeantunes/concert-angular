@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-sidenav-container>
+        <mat-sidenav class="sidebar" mode="side" opened
+        fixedInViewport="true" fixedTopGap="90">
+            <mat-nav-list class="nav-list">
+                <a (click)="showSpinner()" mat-list-item routerLink="/inicio">
+                    <i class="material-icons">
+                        home
+                    </i>
+                    Início
+                </a>
+                <a (click)="showSpinner()" mat-list-item routerLink="/pessoas">
+                    <i class="material-icons">
+                        how_to_reg
+                    </i>
+                    Pessoas
+                </a>
+                <a (click)="showSpinner()" mat-list-item routerLink="/empresas">
+                    <i class="material-icons">
+                        business
+                    </i>
+                    Empresas
+                </a>
+                <a (click)="showSpinner()" mat-list-item routerLink="/mapa">
+                    <i class="material-icons">
+                        explore
+                    </i>
+                    Mapa
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>    
+    </mat-sidenav-container>
+    <mat-spinner *ngIf="spinner" class="load"></mat-spinner>
+</div>

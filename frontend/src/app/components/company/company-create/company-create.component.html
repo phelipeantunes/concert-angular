@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-title>
+    Registrar Empresa
+  </mat-card-title>
+
+  <form [formGroup]="companyForm">
+    <mat-form-field>
+      <input matInput [(ngModel)]="company.name" placeholder="Nome" type="text" formControlName="name">
+    </mat-form-field>
+    <div *ngIf="!name.pristine && name.errors">
+      <p *ngIf="name.errors.required">
+        Nome é obrigatório.
+      </p>
+      <p *ngIf="name.errors.minlength">
+        Nome deve ter no mínimo 3 caracteres.
+      </p>
+      <p *ngIf="name.errors.maxlength">
+        Nome deve ter no máximo 100 caracters.
+      </p>
+    </div>
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="company.type" placeholder="Tipo" type="text" formControlName="type">
+    </mat-form-field>
+    <div *ngIf="!type.pristine && type.errors">
+      <p *ngIf="type.errors.required">
+        Tipo é obrigatório.
+      </p>
+    </div>
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="company.cnpj" placeholder="CNPJ" type="number" formControlName="cnpj">
+    </mat-form-field>
+    <div *ngIf="!cnpj.pristine && cnpj.errors">
+      <p *ngIf="cnpj.errors.required">
+        CNPJ é obrigatório.
+      </p>
+    </div>
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="company.foundation" placeholder="Data de fundação" type="date"
+        formControlName="foundation">
+    </mat-form-field>
+    <div *ngIf="!foundation.pristine && foundation.errors">
+      <p *ngIf="foundation.errors.required">
+        Data de Fundação é obrigatório.
+      </p>
+    </div>
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="company.size" placeholder="Tamanho" type="number" formControlName="size">
+    </mat-form-field>
+    <div *ngIf="!size.pristine && size.errors">
+      <p *ngIf="size.errors.required">
+        Tamanho da empresa é obrigatório
+      </p>
+    </div>
+    <br>
+    <div>
+      <button mat-raised-button (click)="registerCompany()" color="primary"
+        [disabled]="!companyForm.valid">Cadastrar</button>
+      <button mat-raised-button (click)="back()">Voltar</button>
+    </div>
+  </form>
+</mat-card>

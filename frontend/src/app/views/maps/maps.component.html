@@ -1,0 +1,8 @@
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <ng-container>
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </ng-container>
+    <agm-circle [latitude]="radiusLat" [longitude]="radiusLong" [radius]="radius" [fillColor]="'red'"
+        [circleDraggable]="true" [editable]="true">
+    </agm-circle>
+</agm-map>

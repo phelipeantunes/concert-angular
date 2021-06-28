@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title>
+        Excluir pessoa 
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="person.name" name="name" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="email" matInput placeholder="E-mail" [(ngModel)]="person.email" name="email" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data de nascimento" type="date" [(ngModel)]="person.date_birth"
+                name="date_birth" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Estado cívil</mat-label>
+            <mat-select [(ngModel)]="person.marital_status" name="marital_status" disabled>
+                <mat-option>None</mat-option>
+                <mat-option value="Solteiro">Solteiro</mat-option>
+                <mat-option value="Casado">Casado</mat-option>
+                <mat-option value="Separado">Separado</mat-option>
+                <mat-option value="Divorciado">Divorciado</mat-option>
+                <mat-option value="Viúvo">Viúvo</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número de telefone" type="number" [(ngModel)]="person.telephone"
+            name="telephone" disabled>
+        </mat-form-field>
+        <section>
+            <mat-checkbox [(ngModel)]="person.wpp" name="wpp" disabled>WhatsApp</mat-checkbox>
+        </section>
+        <mat-radio-group [(ngModel)]="person.genre" name="genre" disabled>
+            <mat-radio-button value="Maculino">Maculino</mat-radio-button>
+            <mat-radio-button value="Feminino">Feminino</mat-radio-button>
+        </mat-radio-group>
+    </form>
+    <button mat-raised-button (click)="deletePerson()" color="primary">
+        Excluir
+    </button>
+    <button mat-raised-button (click)="back()">
+        Voltar
+    </button>
+</mat-card>

@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>
+        Atualizar Empresa
+    </mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.name" placeholder="Nome" type="text" name="name" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.type" placeholder="Tipo" type="text" name="type" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.cnpj" placeholder="CNPJ" type="number" name="cnpj" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.foundation" placeholder="Data de fundação" type="date"
+                name="foundation" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.size" placeholder="Tamanho" type="number" name="size" required>
+        </mat-form-field>
+        <br>
+        <div>
+            <button mat-raised-button (click)="updateCompany()" color="primary">Atualizar</button>
+            <button mat-raised-button (click)="back()">Voltar</button>
+        </div>
+    </form>
+</mat-card>
